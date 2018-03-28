@@ -85,14 +85,15 @@ public class NameServer {
     }
     public static void main(String[] args) {
         NameServer ns = new NameServer();
-        System.out.println("NameServer started:");
+        
         if(args.length == 0)
-        {
+        { 
             System.out.println("usage 'java NameServer <portno>'");
             System.exit(0);
         }
         try {
             int port = Integer.parseInt(args[0]);
+            System.out.println("NameServer started on port "+port);
             ServerSocket listener = new ServerSocket(port);
             while (true) {
                 Socket aClient = listener.accept();
